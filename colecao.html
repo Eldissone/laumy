@@ -98,24 +98,93 @@
     <main class="pt-16 pb-24 max-w-lg mx-auto min-h-screen">
         <!-- Hero Section -->
         <section class="relative px-4 pt-4">
-            <div class="relative overflow-hidden rounded-xl h-[420px] bg-neutral-900 flex items-end">
-                <img alt="RelÃ³gio de luxo detalhado" class="absolute inset-0 w-full h-full object-cover opacity-70"
-                    data-alt="Close up photography of a LauMY mechanical watch dial"
-                    src="assets/images/hero-watch.png" />
-                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
+            <div id="hero-carousel"
+                class="relative overflow-hidden rounded-2xl h-[420px] bg-neutral-900 shadow-[0_20px_50px_-25px_rgba(0,0,0,0.55)]">
+                <div
+                    class="hero-carousel-track flex h-full transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]">
+                    <article class="hero-slide relative min-w-full h-full flex items-end">
+                        <img alt="Relogio de luxo detalhado" class="absolute inset-0 w-full h-full object-cover opacity-75"
+                            data-alt="Close up photography of a LauMY mechanical watch dial"
+                            src="assets/images/hero-watch.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/35 to-transparent">
+                        </div>
+                        <div class="relative z-10 p-8 w-full">
+                            <p class="text-primary text-sm font-semibold tracking-widest uppercase mb-2">Exclusividade</p>
+                            <h2 class="text-4xl font-bold leading-tight mb-6 text-white">
+                                O tempo passa. <br />O valor permanece.
+                            </h2>
+                            <a href="colecao.html"
+                                class="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-full hover:bg-[#c40f11] hover:scale-105 transition-transform active:scale-95">
+                                Ver colecao
+                                <svg aria-hidden="true" class="icon icon-sm" viewBox="0 0 24 24">
+                                    <path d="M5 12h14" />
+                                    <path d="m13 6 6 6-6 6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="hero-slide relative min-w-full h-full flex items-end">
+                        <img alt="Cronografo premium" class="absolute inset-0 w-full h-full object-cover opacity-75"
+                            data-alt="Close view of premium chronograph watch" src="assets/images/landing/product-chrono.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/35 to-transparent">
+                        </div>
+                        <div class="relative z-10 p-8 w-full">
+                            <p class="text-secondary text-sm font-semibold tracking-widest uppercase mb-2">Colecao Signature</p>
+                            <h2 class="text-4xl font-bold leading-tight mb-6 text-white">
+                                Linhas precisas. <br />Design eterno.
+                            </h2>
+                            <a href="colecao.html"
+                                class="inline-flex items-center gap-2 border border-secondary/50 text-white font-bold py-3 px-6 rounded-full hover:bg-secondary/80 transition-colors">
+                                Explorar modelos
+                                <svg aria-hidden="true" class="icon icon-sm" viewBox="0 0 24 24">
+                                    <path d="M5 12h14" />
+                                    <path d="m13 6 6 6-6 6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="hero-slide relative min-w-full h-full flex items-end">
+                        <img alt="Relogio dourado classico" class="absolute inset-0 w-full h-full object-cover opacity-75"
+                            data-alt="Classic gold dress watch with leather strap" src="assets/images/landing/product-gold.png" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/35 to-transparent">
+                        </div>
+                        <div class="relative z-10 p-8 w-full">
+                            <p class="text-primary text-sm font-semibold tracking-widest uppercase mb-2">Edicao Limitada</p>
+                            <h2 class="text-4xl font-bold leading-tight mb-6 text-white">
+                                Luxo para hoje. <br />Heranca para sempre.
+                            </h2>
+                            <a href="colecao.html"
+                                class="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-full hover:bg-[#c40f11] transition-colors">
+                                Quero ver
+                                <svg aria-hidden="true" class="icon icon-sm" viewBox="0 0 24 24">
+                                    <path d="M5 12h14" />
+                                    <path d="m13 6 6 6-6 6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
                 </div>
-                <div class="relative p-8 w-full">
-                    <p class="text-primary text-sm font-semibold tracking-widest uppercase mb-2">Exclusividade</p>
-                    <h2 class="text-4xl font-bold leading-tight mb-6 text-white">O tempo passa. <br />O valor permanece.
-                    </h2>
-                    <a href="colecao.html"
-                        class="bg-primary text-white font-bold py-3 px-8 rounded-full w-24 flex center items-center gap-2 hover:bg-[#c40f11] hover:scale-105 transition-transform active:scale-95">
-                        Ver
-                        <svg aria-hidden="true" class="icon icon-sm" viewBox="0 0 24 24">
-                            <path d="M5 12h14" />
-                            <path d="m13 6 6 6-6 6" />
-                        </svg>
-                    </a>
+
+                <button type="button" data-action="prev" aria-label="Slide anterior"
+                    class="absolute left-3 top-1/2 -translate-y-1/2 z-20 size-10 rounded-full bg-white/20 text-white backdrop-blur-md border border-white/25 hover:bg-white/30 transition-colors flex items-center justify-center">
+                    <svg aria-hidden="true" class="icon icon-sm" viewBox="0 0 24 24">
+                        <path d="m15 6-6 6 6 6" />
+                    </svg>
+                </button>
+                <button type="button" data-action="next" aria-label="Próximo slide"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 z-20 size-10 rounded-full bg-white/20 text-white backdrop-blur-md border border-white/25 hover:bg-white/30 transition-colors flex items-center justify-center">
+                    <svg aria-hidden="true" class="icon icon-sm" viewBox="0 0 24 24">
+                        <path d="m9 6 6 6-6 6" />
+                    </svg>
+                </button>
+
+                <div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+                    <button type="button" aria-label="Ir para slide 1" data-slide="0"
+                        class="hero-dot h-2.5 w-7 rounded-full bg-white transition-all"></button>
+                    <button type="button" aria-label="Ir para slide 2" data-slide="1"
+                        class="hero-dot h-2.5 w-2.5 rounded-full bg-white/45 transition-all"></button>
+                    <button type="button" aria-label="Ir para slide 3" data-slide="2"
+                        class="hero-dot h-2.5 w-2.5 rounded-full bg-white/45 transition-all"></button>
                 </div>
             </div>
         </section>
@@ -236,7 +305,7 @@
                                 <path d="M3.75 7.5h16.5" />
                             </svg>
                         </div>
-                        <span class="text-xs font-bold leading-tight text-slate-700">RestauraÃ§Ã£o de Joias</span>
+                        <span class="text-xs font-bold leading-tight text-slate-700">Restauração de Joias</span>
                     </div>
                 </div>
             </div>
@@ -250,8 +319,8 @@
                 </svg>
             </div>
             <h3 class="text-xl font-bold mb-2">Tradição e Segurança</h3>
-            <p class="text-slate-600 text-sm mb-6 max-w-[80%] mx-auto">ExcelÃªncia em alta relojoaria e joalheria desde
-                1974.</p>
+            <p class="text-slate-600 text-sm mb-6 max-w-[80%] mx-auto">Excelência em alta relojoaria e joalheria desde
+                2015.</p>
             <div class="flex justify-center gap-8">
                 <div class="flex flex-col items-center">
                     <span class="text-secondary font-bold text-lg">2015</span>
@@ -307,6 +376,103 @@
         </footer>
     </main>
 
+    <script>
+        (() => {
+            const carousel = document.getElementById("hero-carousel");
+            if (!carousel) return;
+
+            const track = carousel.querySelector(".hero-carousel-track");
+            const slides = Array.from(carousel.querySelectorAll(".hero-slide"));
+            const dots = Array.from(carousel.querySelectorAll(".hero-dot"));
+            const prevBtn = carousel.querySelector('[data-action="prev"]');
+            const nextBtn = carousel.querySelector('[data-action="next"]');
+
+            if (!track || slides.length === 0) return;
+
+            let index = 0;
+            let autoplayId = null;
+            const intervalMs = 3000;
+            let touchStartX = 0;
+            let touchDeltaX = 0;
+
+            const setActive = (nextIndex) => {
+                index = (nextIndex + slides.length) % slides.length;
+                track.style.transform = `translateX(-${index * 100}%)`;
+
+                dots.forEach((dot, dotIndex) => {
+                    const isActive = dotIndex === index;
+                    dot.classList.toggle("w-7", isActive);
+                    dot.classList.toggle("w-2.5", !isActive);
+                    dot.classList.toggle("bg-white", isActive);
+                    dot.classList.toggle("bg-white/45", !isActive);
+                });
+            };
+
+            const next = () => setActive(index + 1);
+            const prev = () => setActive(index - 1);
+
+            const stopAutoplay = () => {
+                if (autoplayId !== null) {
+                    clearInterval(autoplayId);
+                    autoplayId = null;
+                }
+            };
+
+            const startAutoplay = () => {
+                stopAutoplay();
+                autoplayId = setInterval(next, intervalMs);
+            };
+
+            prevBtn?.addEventListener("click", () => {
+                prev();
+                startAutoplay();
+            });
+
+            nextBtn?.addEventListener("click", () => {
+                next();
+                startAutoplay();
+            });
+
+            dots.forEach((dot) => {
+                dot.addEventListener("click", () => {
+                    const target = Number(dot.dataset.slide || 0);
+                    setActive(target);
+                    startAutoplay();
+                });
+            });
+
+            carousel.addEventListener("mouseenter", stopAutoplay);
+            carousel.addEventListener("mouseleave", startAutoplay);
+            carousel.addEventListener("focusin", stopAutoplay);
+            carousel.addEventListener("focusout", startAutoplay);
+
+            carousel.addEventListener("touchstart", (event) => {
+                touchStartX = event.changedTouches[0].clientX;
+                touchDeltaX = 0;
+                stopAutoplay();
+            }, { passive: true });
+
+            carousel.addEventListener("touchmove", (event) => {
+                touchDeltaX = event.changedTouches[0].clientX - touchStartX;
+            }, { passive: true });
+
+            carousel.addEventListener("touchend", () => {
+                if (Math.abs(touchDeltaX) > 50) {
+                    if (touchDeltaX < 0) next();
+                    else prev();
+                }
+                startAutoplay();
+            });
+
+            document.addEventListener("visibilitychange", () => {
+                if (document.hidden) stopAutoplay();
+                else startAutoplay();
+            });
+
+            setActive(0);
+            startAutoplay();
+        })();
+    </script>
 </body>
 
 </html>

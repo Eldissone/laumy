@@ -124,8 +124,10 @@
     <main class=" pb-24 max-w-lg mx-auto">
         <!-- Hero Section -->
         <section class="relative h-[85vh] w-full">
-            <div class="absolute inset-0 overflow-hidden" data-alt="Close up of a LauMY automatic watch movement">
-                <video autoplay class="absolute inset-0 h-full w-full object-cover" loop muted playsinline
+            <div class="absolute inset-0 overflow-hidden rounded-b-lg" data-alt="Close up of a LauMY automatic watch movement">
+                <video autoplay muted loop playsinline webkit-playsinline x5-playsinline
+                    x5-video-player-type="h5" x5-video-player-fullscreen="false" preload="auto"
+                    class="absolute inset-0 h-full w-full object-cover"
                     poster="assets/images/landing/hero-bg.png">
                     <source src="assets/videos/video.mp4" type="video/mp4" />
                 </video>
@@ -413,6 +415,45 @@
         </div>
     </footer>
 
+    <script>
+        (() => {
+            const autoplayVideos = Array.from(document.querySelectorAll("video[autoplay]"));
+            if (autoplayVideos.length === 0) return;
+
+            const tryPlay = (video) => {
+                video.muted = true;
+                video.defaultMuted = true;
+                video.playsInline = true;
+                video.setAttribute("muted", "");
+                video.setAttribute("playsinline", "");
+                video.setAttribute("webkit-playsinline", "true");
+                video.setAttribute("x5-playsinline", "true");
+                video.setAttribute("x5-video-player-type", "h5");
+                video.setAttribute("x5-video-player-fullscreen", "false");
+
+                const playPromise = video.play();
+                if (playPromise && typeof playPromise.catch === "function") {
+                    playPromise.catch(() => { });
+                }
+            };
+
+            autoplayVideos.forEach((video) => {
+                tryPlay(video);
+                video.addEventListener("loadedmetadata", () => tryPlay(video), { once: true });
+                video.addEventListener("canplay", () => tryPlay(video), { once: true });
+            });
+
+            const resumeAll = () => autoplayVideos.forEach(tryPlay);
+
+            document.addEventListener("visibilitychange", () => {
+                if (!document.hidden) resumeAll();
+            });
+
+            ["touchstart", "click", "scroll"].forEach((eventName) => {
+                window.addEventListener(eventName, resumeAll, { passive: true, once: true });
+            });
+        })();
+    </script>
 </body>
 
 </html>
