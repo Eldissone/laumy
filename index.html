@@ -45,6 +45,12 @@
             scrollbar-width: none;
         }
 
+        .info-banner {
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-x: contain;
+            touch-action: pan-x;
+        }
+
         .icon {
             width: 1.25rem;
             height: 1.25rem;
@@ -81,7 +87,10 @@
         <div class="flex items-center justify-between px-6 h-16 max-w-lg mx-auto">
 
             <h1 class="text-2xl font-black tracking-widest text-primary">
-                <a href="index.html" class="hover:opacity-90 transition-opacity">LauMY</a>
+                <a href="index.html" class="inline-flex items-center hover:opacity-90 transition-opacity"
+                    aria-label="LauMY">
+                    <img src="assets/icons/laumy.jpg" alt="Logo LauMY" class="h-12 w-auto object-contain rounded-md" />
+                </a>
             </h1>
 
             <div class="flex items-center gap-3">
@@ -98,7 +107,7 @@
         </div>
         <!-- Info Banner (Horizontal Scroll) -->
         <div id="info-banner"
-            class="flex max-w-full gap-4 px-4 py-2 overflow-x-auto hide-scrollbar bg-secondary/10 border-t border-secondary/20"
+            class="info-banner flex max-w-full gap-4 px-4 py-2 overflow-x-auto hide-scrollbar bg-secondary/10 border-t border-secondary/20"
             aria-label="Informações rápidas">
             <div class="flex h-6 shrink-0 items-center justify-center gap-x-2">
                 <svg aria-hidden="true" class="icon icon-sm text-secondary" viewBox="0 0 24 24">
@@ -469,35 +478,68 @@
 
             banner.dataset.initialized = "true";
 
-            const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const motionQuery = window.matchMedia
+                ? window.matchMedia("(prefers-reduced-motion: reduce)")
+                : { matches: false };
+            let prefersReducedMotion = !!motionQuery.matches;
+
             const items = Array.from(banner.children);
             if (items.length === 0) return;
 
-            // Duplicate items to create a seamless infinite horizontal loop.
-            items.forEach((item) => {
-                const clone = item.cloneNode(true);
-                clone.setAttribute("aria-hidden", "true");
-                banner.appendChild(clone);
-            });
+            const appendCloneSet = () => {
+                items.forEach((item) => {
+                    const clone = item.cloneNode(true);
+                    clone.setAttribute("aria-hidden", "true");
+                    clone.dataset.infoClone = "true";
+                    banner.appendChild(clone);
+                });
+            };
 
-            let rafId = null;
-            const speedPx = 0.55;
+            const clearClones = () => {
+                banner.querySelectorAll("[data-info-clone='true']").forEach((node) => node.remove());
+            };
 
-            const normalizeScroll = () => {
-                const halfWidth = banner.scrollWidth / 2;
-                if (banner.scrollLeft >= halfWidth) {
-                    banner.scrollLeft -= halfWidth;
+            const ensureOverflow = () => {
+                clearClones();
+                appendCloneSet();
+
+                const targetWidth = Math.max(banner.clientWidth * 2, 1);
+                let guard = 0;
+                while (banner.scrollWidth < targetWidth && guard < 12) {
+                    appendCloneSet();
+                    guard += 1;
                 }
             };
 
-            const tick = () => {
-                banner.scrollLeft += speedPx;
+            let rafId = null;
+            let lastTime = 0;
+            const speedPxPerSecond = 32;
+
+            const normalizeScroll = () => {
+                const halfWidth = banner.scrollWidth / 2;
+                if (halfWidth <= 1) return;
+                if (banner.scrollLeft >= halfWidth) banner.scrollLeft -= halfWidth;
+                if (banner.scrollLeft < 0) banner.scrollLeft += halfWidth;
+            };
+
+            const tick = (timestamp) => {
+                if (prefersReducedMotion) {
+                    stop();
+                    return;
+                }
+
+                if (lastTime === 0) lastTime = timestamp;
+                const delta = timestamp - lastTime;
+                lastTime = timestamp;
+
+                banner.scrollLeft += (speedPxPerSecond * delta) / 1000;
                 normalizeScroll();
                 rafId = window.requestAnimationFrame(tick);
             };
 
             const start = () => {
                 if (prefersReducedMotion || rafId !== null) return;
+                lastTime = 0;
                 rafId = window.requestAnimationFrame(tick);
             };
 
@@ -507,12 +549,29 @@
                 rafId = null;
             };
 
+            const onMotionChange = (event) => {
+                prefersReducedMotion = !!event.matches;
+                if (prefersReducedMotion) stop();
+                else start();
+            };
+
+            if (typeof motionQuery.addEventListener === "function") {
+                motionQuery.addEventListener("change", onMotionChange);
+            } else if (typeof motionQuery.addListener === "function") {
+                motionQuery.addListener(onMotionChange);
+            }
+
+            const onResize = () => {
+                ensureOverflow();
+                normalizeScroll();
+            };
+
             banner.addEventListener("mouseenter", stop);
             banner.addEventListener("mouseleave", start);
             banner.addEventListener("touchstart", stop, { passive: true });
             banner.addEventListener("touchend", start, { passive: true });
-            banner.addEventListener("pointerdown", stop);
-            window.addEventListener("pointerup", start);
+            banner.addEventListener("mousedown", stop);
+            window.addEventListener("mouseup", start);
             banner.addEventListener("focusin", stop);
             banner.addEventListener("focusout", start);
 
@@ -521,7 +580,11 @@
                 else start();
             });
 
-            window.addEventListener("resize", normalizeScroll);
+            window.addEventListener("resize", onResize);
+            window.addEventListener("orientationchange", onResize);
+
+            ensureOverflow();
+            normalizeScroll();
             start();
         })();
     </script>
