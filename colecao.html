@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LauMY - relojoaria</title>
+    <script src="assets/js/tailwind-cdn.forms-container-queries.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+
+    <link href="assets/css/plus-jakarta-sans.css" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e41214",
+                        "secondary": "#5f3cb9",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#121212",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.92);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .icon-sm {
+            width: 1rem;
+            height: 1rem;
+            stroke-width: 2;
+        }
+
+        .icon-lg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-slate-900 font-display overflow-x-hidden transition-colors duration-300">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-slate-200">
+        <div class="flex items-center justify-between px-6 h-16 max-w-lg mx-auto">
+
+            <h1 class="text-2xl font-black tracking-widest text-primary">LauMY</h1>
+
+            <div class="flex items-center gap-3">
+                <svg aria-hidden="true" class="icon text-secondary" viewBox="0 0 24 24">
+                    <path d="m21 21-4.35-4.35" />
+                    <circle cx="11" cy="11" r="6" />
+                </svg>
+                <div class="relative">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="pt-16 pb-24 max-w-lg mx-auto min-h-screen">
+        <!-- Hero Section -->
+        <section class="relative px-4 pt-4">
+            <div class="relative overflow-hidden rounded-xl h-[420px] bg-neutral-900 flex items-end">
+                <img alt="RelÃ³gio de luxo detalhado" class="absolute inset-0 w-full h-full object-cover opacity-70"
+                    data-alt="Close up photography of a LauMY mechanical watch dial"
+                    src="assets/images/hero-watch.png" />
+                <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent">
+                </div>
+                <div class="relative p-8 w-full">
+                    <p class="text-primary text-sm font-semibold tracking-widest uppercase mb-2">Exclusividade</p>
+                    <h2 class="text-4xl font-bold leading-tight mb-6 text-white">O tempo passa. <br />O valor permanece.
+                    </h2>
+                    <a href="colecao.html"
+                        class="bg-primary text-white font-bold py-3 px-8 rounded-full w-24 flex center items-center gap-2 hover:bg-[#c40f11] hover:scale-105 transition-transform active:scale-95">
+                        Ver
+                        <svg aria-hidden="true" class="icon icon-sm" viewBox="0 0 24 24">
+                            <path d="M5 12h14" />
+                            <path d="m13 6 6 6-6 6" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Categories -->
+        <section class="px-4 py-8">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold tracking-tight">Categorias</h3>
+                <span class="text-xs text-secondary font-bold uppercase tracking-widest">Ver Todas</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="relative h-28 rounded-lg overflow-hidden group cursor-pointer">
+                    <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        data-alt="Close-up of a silver watch category" src="assets/images/category-watches.png" />
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <span class="text-white font-bold tracking-wider">Relógios</span>
+                    </div>
+                </div>
+                <div class="relative h-28 rounded-lg overflow-hidden group cursor-pointer">
+                    <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        data-alt="Gold jewelry necklace category" src="assets/images/category-gold.png" />
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <span class="text-white font-bold tracking-wider">Ouro</span>
+                    </div>
+                </div>
+                <div class="relative h-28 rounded-lg overflow-hidden group cursor-pointer">
+                    <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        data-alt="Diamond wedding ring category" src="assets/images/category-jewelry.png" />
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <span class="text-white font-bold tracking-wider">Joias</span>
+                    </div>
+                </div>
+                <div class="relative h-28 rounded-lg overflow-hidden group cursor-pointer">
+                    <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        data-alt="Silver chain and bracelets category" src="assets/images/category-silver.png" />
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <span class="text-white font-bold tracking-wider">Prata</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Product Showcase -->
+        <section class="px-4 py-4">
+            <h3 class="text-lg font-bold mb-6">Destaques da Temporada</h3>
+            <div class="flex overflow-x-auto gap-4 no-scrollbar pb-4 -mx-4 px-4">
+                <!-- Product 1 -->
+                <div class="min-w-[240px] bg-white rounded-xl border border-slate-200 shadow-sm p-3 group">
+                    <div class="relative aspect-square rounded-lg overflow-hidden mb-3">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            data-alt="LauMY chronometer gold and black watch" src="assets/images/product-watch.png" />
+                        <button
+                            class="absolute top-2 right-2 size-8 bg-primary/85 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <svg aria-hidden="true" class="icon icon-sm text-white" viewBox="0 0 24 24">
+                                <path
+                                    d="m21.435 7.02c0 4.197-3.643 6.975-8.55 11.286a1.39 1.39 0 0 1-1.77 0c-4.907-4.31-8.55-7.088-8.55-11.286a4.875 4.875 0 0 1 8.289-3.46L12 4.707l1.146-1.146a4.875 4.875 0 0 1 8.289 3.46Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Rolex</p>
+                    <h4 class="text-sm font-medium text-slate-900 line-clamp-1">Submariner Date Gold</h4>
+                    <div class="flex items-center justify-between mt-3">
+                        <span class="text-slate-900 font-bold">AOA 124.900</span>
+                        <button data-platform="whatsapp"
+                            class="w-12 h-12 bg-green-500 text-white rounded-full hover:bg-green-600 transition flex items-center justify-center gap-2 text-xl">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="min-w-[240px] bg-white rounded-xl border border-slate-200 shadow-sm p-3 group">
+                    <div class="relative aspect-square rounded-lg overflow-hidden mb-3">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            data-alt="Elegant diamond necklace" src="assets/images/product-necklace.png" />
+                        <button
+                            class="absolute top-2 right-2 size-8 bg-primary/85 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-primary transition-colors">
+                            <svg aria-hidden="true" class="icon icon-sm text-white" viewBox="0 0 24 24">
+                                <path
+                                    d="m21.435 7.02c0 4.197-3.643 6.975-8.55 11.286a1.39 1.39 0 0 1-1.77 0c-4.907-4.31-8.55-7.088-8.55-11.286a4.875 4.875 0 0 1 8.289-3.46L12 4.707l1.146-1.146a4.875 4.875 0 0 1 8.289 3.46Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Tiffany</p>
+                    <h4 class="text-sm font-medium text-slate-900 line-clamp-1">Colar Diamante SolitÃ¡rio</h4>
+                    <div class="flex items-center justify-between mt-3">
+                        <span class="text-slate-900 font-bold">AOA 48.200</span>
+                        <button data-platform="whatsapp"
+                            class="w-12 h-12 bg-green-500 text-white rounded-full hover:bg-green-600 transition flex items-center justify-center gap-2 text-xl">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services -->
+        <section class="px-4 py-8">
+            <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+                <h3 class="text-lg font-bold mb-6 text-center">Nossos Serviços</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div
+                        class="flex flex-col items-center text-center p-4 rounded-lg bg-secondary/5 border border-secondary/15">
+                        <div class="size-12 rounded-full bg-secondary/15 flex items-center justify-center mb-3">
+                            <svg aria-hidden="true" class="icon text-secondary" viewBox="0 0 24 24">
+                                <path
+                                    d="m11.42 3.04 1.17-1.17a1.5 1.5 0 0 1 2.12 0l1.42 1.42a1.5 1.5 0 0 1 0 2.12l-1.17 1.17" />
+                                <path d="m2.25 21.75 6.25-6.25" />
+                                <path d="m5.47 15.53 3 3" />
+                                <path d="m14.53 8.47 3 3" />
+                                <path d="m12.75 6.25 5 5" />
+                            </svg>
+                        </div>
+                        <span class="text-xs font-bold leading-tight text-slate-700">Manutenção Especializada</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center p-4 rounded-lg bg-secondary/5 border border-secondary/15">
+                        <div class="size-12 rounded-full bg-secondary/15 flex items-center justify-center mb-3">
+                            <svg aria-hidden="true" class="icon text-secondary" viewBox="0 0 24 24">
+                                <path d="M6.75 3h10.5l3 4.5L12 21 3.75 7.5 6.75 3Z" />
+                                <path d="M9.75 3 12 7.5 14.25 3" />
+                                <path d="M3.75 7.5h16.5" />
+                            </svg>
+                        </div>
+                        <span class="text-xs font-bold leading-tight text-slate-700">RestauraÃ§Ã£o de Joias</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Trust Signals -->
+        <section class="px-4 py-8 text-center">
+            <div class="inline-flex items-center justify-center gap-2 mb-4">
+                <svg aria-hidden="true" class="icon icon-lg text-secondary" viewBox="0 0 24 24">
+                    <path d="M12 3.75 4.5 6.75v5.25c0 4.5 3.15 8.1 7.5 9.3 4.35-1.2 7.5-4.8 7.5-9.3V6.75L12 3.75Z" />
+                    <path d="m9 12 2 2 4-4" />
+                </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Tradição e Segurança</h3>
+            <p class="text-slate-600 text-sm mb-6 max-w-[80%] mx-auto">ExcelÃªncia em alta relojoaria e joalheria desde
+                1974.</p>
+            <div class="flex justify-center gap-8">
+                <div class="flex flex-col items-center">
+                    <span class="text-secondary font-bold text-lg">2015</span>
+                    <span class="text-[10px] uppercase tracking-tighter text-slate-500">Fundação</span>
+                </div>
+                <div class="w-px h-10 bg-secondary/30"></div>
+                <div class="flex flex-col items-center">
+                    <span class="text-primary font-bold text-lg">100%</span>
+                    <span class="text-[10px] uppercase tracking-tighter text-slate-500">Autenticidade</span>
+                </div>
+                <div class="w-px h-10 bg-secondary/30"></div>
+                <div class="flex flex-col items-center">
+                    <span class="text-secondary font-bold text-lg">Premium</span>
+                    <span class="text-[10px] uppercase tracking-tighter text-slate-500">Garantia</span>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="mt-12 px-6 pb-12 text-center">
+            <h2 class="text-2xl font-extrabold tracking-[0.3em] mb-8 text-secondary">LauMY</h2>
+            <div class="flex justify-center gap-6 mb-8">
+                <!-- WhatsApp -->
+                <button data-platform="whatsapp"
+                    class="w-12 h-12 bg-green-500 text-white rounded-full hover:bg-green-600 transition flex items-center justify-center text-xl">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </button>
+
+                <!-- instagram -->
+                <button data-platform="instagram" class="w-12 h-12 
+           bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#FCAF45] 
+           text-white rounded-full 
+           hover:scale-110 hover:brightness-110
+           transition-all duration-300 
+           flex items-center justify-center text-xl shadow-lg">
+                    <i class="fa-brands fa-instagram"></i>
+                </button>
+
+
+                <!-- Facebook -->
+                <button data-platform="facebook"
+                    class="w-12 h-12 bg-blue-800 text-white rounded-full hover:bg-blue-900 transition flex items-center justify-center text-xl">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </button>
+            </div>
+            <ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs text-slate-500 font-medium mb-8">
+                <li><a class="text-slate-600 hover:text-primary transition-colors" href="#">Privacidade</a></li>
+                <li><a class="text-slate-600 hover:text-primary transition-colors" href="#">Termos</a></li>
+                <li><a class="text-slate-600 hover:text-primary transition-colors" href="#">Trocas</a></li>
+                <li><a class="text-slate-600 hover:text-primary transition-colors" href="#">Lojas</a></li>
+            </ul>
+            <p class="text-[10px] text-slate-600 uppercase tracking-widest">Â©2026 relojoaria LauMY. Todos os direitos
+                reservados.</p>
+        </footer>
+    </main>
+
+</body>
+
+</html>

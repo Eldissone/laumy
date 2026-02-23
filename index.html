@@ -1,0 +1,418 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LauMY Watch &amp; Jewelry</title>
+    <script src="assets/js/tailwind-cdn.forms-container-queries.js"></script>
+    <link href="assets/css/plus-jakarta-sans.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e41214",
+                        "secondary": "#5f3cb9",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221e10",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            flex-shrink: 0;
+        }
+
+        .icon-sm {
+            width: 1rem;
+            height: 1rem;
+            stroke-width: 2;
+        }
+
+        .icon-lg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-slate-900 font-display overflow-x-hidden">
+    <!-- Top Header -->
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-primary/10">
+        <div class="flex items-center justify-between px-6 h-16 max-w-lg mx-auto">
+
+            <h1 class="text-2xl font-black tracking-widest text-primary">LauMY</h1>
+
+            <div class="flex items-center gap-3">
+                <svg aria-hidden="true" class="icon text-primary/90" viewBox="0 0 24 24">
+                    <path d="m21 21-4.35-4.35" />
+                    <circle cx="11" cy="11" r="6" />
+                </svg>
+                <div class="relative">
+                </div>
+            </div>
+        </div>
+        <!-- Info Banner (Horizontal Scroll) -->
+        <div class="flex max-w-full gap-4 px-4 py-2 overflow-x-auto hide-scrollbar bg-secondary/10 border-t border-secondary/20">
+            <div class="flex h-6 shrink-0 items-center justify-center gap-x-2">
+                <svg aria-hidden="true" class="icon icon-sm text-secondary" viewBox="0 0 24 24">
+                    <path d="M12 7.5v4.5l2.75 2.75" />
+                    <path d="M3.75 12a8.25 8.25 0 1 0 2.42-5.83" />
+                    <path d="M3.75 4.5v4.5h4.5" />
+                </svg>
+                <p class="text-[11px] font-medium uppercase tracking-wider text-secondary/90">Since 19XX</p>
+            </div>
+            <div class="flex h-6 shrink-0 items-center justify-center gap-x-2">
+                <svg aria-hidden="true" class="icon icon-sm text-secondary" viewBox="0 0 24 24">
+                    <path d="M12 3.75 4.5 6.75v5.25c0 4.5 3.15 8.1 7.5 9.3 4.35-1.2 7.5-4.8 7.5-9.3V6.75L12 3.75Z" />
+                    <path d="m9 12 2 2 4-4" />
+                </svg>
+                <p class="text-[11px] font-medium uppercase tracking-wider text-secondary/90">Authenticity Guaranteed
+                </p>
+            </div>
+            <div class="flex h-6 shrink-0 items-center justify-center gap-x-2">
+                <svg aria-hidden="true" class="icon icon-sm text-secondary" viewBox="0 0 24 24">
+                    <rect x="5.25" y="10.5" width="13.5" height="9.75" rx="2" />
+                    <path d="M8.25 10.5V7.875a3.75 3.75 0 0 1 7.5 0V10.5" />
+                </svg>
+                <p class="text-[11px] font-medium uppercase tracking-wider text-secondary/90">Secure Payments</p>
+            </div>
+        </div>
+    </header>
+
+    <main class=" pb-24 max-w-lg mx-auto">
+        <!-- Hero Section -->
+        <section class="relative h-[85vh] w-full">
+            <div class="absolute inset-0 overflow-hidden" data-alt="Close up of a LauMY automatic watch movement">
+                <video autoplay class="absolute inset-0 h-full w-full object-cover" loop muted playsinline
+                    poster="assets/images/landing/hero-bg.png">
+                    <source src="assets/videos/video.mp4" type="video/mp4" />
+                </video>
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-background-dark via-background-dark/40 to-background-dark/10">
+                </div>
+            </div>
+            <div class="relative h-full flex flex-col items-center justify-end p-6 pb-16 text-center gap-6">
+                <div class="flex flex-col gap-3">
+                    <h2 class="text-4xl font-extrabold leading-tight tracking-tight text-white">
+                        O tempo passa.<br /><span class="text-primary">O valor permanece.</span>
+                    </h2>
+                    <p class="text-sm font-light text-white/80 max-w-[280px] mx-auto leading-relaxed">
+                        Relógios, ouro e prata com garantia e Tradição de uma vida inteira.
+                    </p>
+                </div>
+                <div class="flex flex-col w-full gap-3 mt-4">
+                    <a href="colecao.html"
+                        class="w-full bg-primary text-white py-4 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-[#c40f11] transition-colors inline-flex items-center justify-center">Ver
+                        Coleção</a>
+                    <button data-platform="whatsapp"
+                        class="w-full h-12 bg-green-500 text-white rounded-full hover:bg-green-600 transition flex items-center justify-center gap-2 text-xl">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        Falar com especialista
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Categories Section -->
+        <section class="p-4 py-10">
+            <div class="flex items-end justify-between mb-6">
+                <h3 class="text-2xl font-bold tracking-tight">Categorias</h3>
+                <a class="text-secondary text-xs font-bold uppercase tracking-wider border-b border-secondary"
+                    href="#">Explorar tudo</a>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="group relative aspect-square overflow-hidden rounded-xl">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Selection of LauMY gold watches"
+                        style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url("assets/images/landing/cat-watches.png");'>
+                    </div>
+                    <div class="absolute inset-0 flex items-end p-4">
+                        <p class="text-lg font-bold">Relógios</p>
+                    </div>
+                </div>
+                <div class="group relative aspect-square overflow-hidden rounded-xl">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Gold bars and jewelry"
+                        style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url("assets/images/landing/cat-gold.png");'>
+                    </div>
+                    <div class="absolute inset-0 flex items-end p-4">
+                        <p class="text-lg font-bold">Ouro</p>
+                    </div>
+                </div>
+                <div class="group relative aspect-square overflow-hidden rounded-xl">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Fine silver necklace and earrings"
+                        style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url("assets/images/landing/cat-silver.png");'>
+                    </div>
+                    <div class="absolute inset-0 flex items-end p-4">
+                        <p class="text-lg font-bold">Prata</p>
+                    </div>
+                </div>
+                <div class="group relative aspect-square overflow-hidden rounded-xl">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                        data-alt="Sparkling diamond and gold jewelry"
+                        style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url("assets/images/landing/cat-jewelry.png");'>
+                    </div>
+                    <div class="absolute inset-0 flex items-end p-4">
+                        <p class="text-lg font-bold">Joias</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Watches Showcase -->
+        <section class="py-10 bg-slate-100/80">
+            <div class="px-4 mb-8">
+                <h3 class="text-2xl font-bold tracking-tight mb-2">Destaques</h3>
+                <p class="text-slate-600 text-sm">ColeÃ§Ã£o exclusiva de peÃ§as selecionadas.</p>
+            </div>
+            <div class="flex gap-4 overflow-x-auto hide-scrollbar px-4">
+                <!-- Product Card 1 -->
+                <div
+                    class="min-w-[260px] flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+                    <div class="relative h-64 bg-cover bg-center" data-alt="Silver LauMY chronometer watch"
+                        style='background-image: url("assets/images/landing/product-chrono.png");'>
+                        <div
+                            class="absolute top-3 right-3 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded">
+                            NEW</div>
+                    </div>
+                    <div class="p-4 flex flex-col gap-2">
+                        <p class="text-secondary text-[10px] font-bold uppercase tracking-widest">Premium Collection</p>
+                        <h4 class="text-lg font-bold">Master Chronograph</h4>
+                        <p class="text-slate-600 text-xs line-clamp-1">Movimento automÃ¡tico, aÃ§o inoxidÃ¡vel.</p>
+                        <p class="text-xl font-bold mt-2">AOA 14.900,00</p>
+                        <div class="grid grid-cols-2 gap-2 mt-4">
+                            <button
+                                class="bg-primary text-white text-xs font-bold py-2 rounded-full uppercase tracking-wider hover:bg-[#c40f11] transition-colors">ver mais</button>
+                            <button data-platform="whatsapp"
+                                class="w-full h-12 bg-green-500 text-white rounded-full hover:bg-green-600 transition flex items-center justify-center gap-2 text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div
+                    class="min-w-[260px] flex flex-col bg-white rounded-xl overflow-hidden border border-slate-200 shadow-sm">
+                    <div class="relative h-64 bg-cover bg-center" data-alt="Classic gold dress watch"
+                        style='background-image: url("assets/images/landing/product-gold.png");'>
+                    </div>
+                    <div class="p-4 flex flex-col gap-2">
+                        <p class="text-secondary text-[10px] font-bold uppercase tracking-widest">Vintage Edition</p>
+                        <h4 class="text-lg font-bold">Royal Gold 1965</h4>
+                        <p class="text-slate-600 text-xs line-clamp-1">Ouro 18k, pulseira de couro genuÃ­na.</p>
+                        <p class="text-xl font-bold mt-2">AOA 28.450,00</p>
+                        <div class="grid grid-cols-2 gap-2 mt-4">
+                            <button
+                                class="bg-primary text-white text-xs font-bold py-2 rounded-full uppercase tracking-wider hover:bg-[#c40f11] transition-colors">ver mais</button>
+                           <button data-platform="whatsapp"
+                                class="w-full h-12 bg-green-500 text-white rounded-full hover:bg-green-600 transition flex items-center justify-center gap-2 text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+        <section class="p-4 py-12">
+            <h3 class="text-2xl font-bold tracking-tight mb-8 text-center">Nossos Serviços</h3>
+            <div class="grid grid-cols-1 gap-6">
+                <div class="flex items-center gap-5 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+                    <div class="size-14 shrink-0 bg-secondary/15 rounded-full flex items-center justify-center">
+                        <svg aria-hidden="true" class="icon text-secondary" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="7.5" />
+                            <path d="M12 8.25v4.25l3 1.75" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Manutenção de Relógios</h4>
+                        <p class="text-sm text-slate-600">Técnicos especializados em maquinários e automáticos.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-5 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+                    <div class="size-14 shrink-0 bg-secondary/15 rounded-full flex items-center justify-center">
+                        <svg aria-hidden="true" class="icon text-secondary" viewBox="0 0 24 24">
+                            <rect x="3.75" y="7.5" width="16.5" height="9" rx="2" />
+                            <path d="M20.25 10.5h1.5v3h-1.5" />
+                            <path d="m9 12 2.25-2.25v1.5h2.25L11.25 13.5V12Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Troca de Bateria</h4>
+                        <p class="text-sm text-slate-600">Troca imediata com vedação e teste de pressão original.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-5 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+                    <div class="size-14 shrink-0 bg-secondary/15 rounded-full flex items-center justify-center">
+                        <svg aria-hidden="true" class="icon text-secondary" viewBox="0 0 24 24">
+                            <path d="M4.5 18.75h15" />
+                            <path d="M7.5 18.75 6 9.75h12l-1.5 9" />
+                            <path d="m9 9.75.75-3h4.5l.75 3" />
+                            <path d="M9.75 13.5h4.5" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Polimento de Joias</h4>
+                        <p class="text-sm text-slate-600">Recupere o brilho original das suas peças em ouro e prata.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About & Tradition -->
+        <section class="relative overflow-hidden py-16 px-6 bg-secondary/5 border-y border-secondary/20">
+            <div class="absolute -right-10 top-10 opacity-10">
+                <svg aria-hidden="true" class="w-40 h-40 text-secondary" viewBox="0 0 24 24">
+                    <path d="M12 3.75 4.5 6.75v5.25c0 4.5 3.15 8.1 7.5 9.3 4.35-1.2 7.5-4.8 7.5-9.3V6.75L12 3.75Z"
+                        fill="currentColor" />
+                </svg>
+            </div>
+            <div class="relative z-10 flex flex-col gap-4">
+                <h3 class="text-3xl font-extrabold text-secondary">Nossa Tradição</h3>
+                <p class="text-lg leading-relaxed font-light italic">
+                    "Transformamos momentos em eternidade através de peças que transcendem
+                    gerações."
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    Nossa curadoria é feita por especialistas apaixonados pela alta relojoaria e ourivesaria clássica.
+                    Cada peça em nosso catálogo passa por rigorosos testes de autenticidade e qualidade.
+                </p>
+                <div class="mt-4 flex items-center gap-6">
+                    <div>
+                        <p class="text-2xl font-bold text-slate-900">16+</p>
+                        <p class="text-[10px] uppercase tracking-widest text-primary font-bold">Anos de História</p>
+                    </div>
+                    <div class="w-px h-10 bg-secondary/30"></div>
+                    <div>
+                        <p class="text-2xl font-bold text-slate-900">10k+</p>
+                        <p class="text-[10px] uppercase tracking-widest text-primary font-bold">Clientes Satisfeitos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Trust / Maps -->
+        <section class="p-4 py-12">
+            <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
+                <svg aria-hidden="true" class="icon text-primary" viewBox="0 0 24 24">
+                    <path d="M12 21s6-5.7 6-11.25a6 6 0 1 0-12 0C6 15.3 12 21 12 21Z" />
+                    <circle cx="12" cy="9.75" r="2.25" />
+                </svg>
+                Onde nos encontrar
+            </h3>
+            <div class="w-full h-48 rounded-xl overflow-hidden grayscale contrast-125 mb-4 border border-slate-200 grid grid-cols-3">
+                <img class="w-full h-full object-cover" data-alt="Luxury watch close-up"
+                    src="assets/images/landing/cat-watches.png" />
+                <img class="w-full h-full object-cover" data-alt="Gold jewelry details"
+                    src="assets/images/landing/cat-gold.png" />
+                <img class="w-full h-full object-cover" data-alt="Fine jewelry showcase"
+                    src="assets/images/landing/cat-jewelry.png" />
+            </div>
+            <div class="flex flex-col gap-1 text-sm">
+                <p class="font-bold">Unidade Jardins - Matriz</p>
+                <p class="text-slate-600">Rede Azul, Lubango</p>
+                <p class="text-slate-600">Millenium, Lubango</p>
+                <p class="text-slate-600">Moçamedes, Namibe</p>
+                <p class="text-slate-600">Seg - Sex: 08:00 - 18:00</p>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white py-12 px-6 border-t border-slate-200">
+        <div class="flex flex-col gap-10">
+            <div class="flex flex-col gap-4">
+                <h1 class="text-2xl font-black tracking-widest text-secondary">LauMY</h1>
+                <p class="text-sm text-slate-600 leading-relaxed max-w-xs">
+                    Exceléncia e confiança na venda e Manutenção de artigos de luxo. A sua joalheria de confiança desde
+                    o sempre.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-slate-900">Menu</h4>
+                    <ul class="flex flex-col gap-2 text-sm text-slate-600 font-light">
+                        <li>Relógios</li>
+                        <li>Ouro &amp; Prata</li>
+                        <li>Serviços</li>
+                        <li>Sobre NÃ³s</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-slate-900">Social</h4>
+                    <div class="flex gap-4">
+                        <div
+                            class="size-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                            <svg aria-hidden="true" class="icon icon-sm" viewBox="0 0 24 24">
+                                <path
+                                    d="M15.75 8.25h3a2.25 2.25 0 0 1 2.25 2.25v8.25l-4.5-2.25H9.75A2.25 2.25 0 0 1 7.5 14.25V11.25" />
+                                <path
+                                    d="M4.5 5.25h9A2.25 2.25 0 0 1 15.75 7.5v5.25A2.25 2.25 0 0 1 13.5 15h-6l-3 2.25V7.5A2.25 2.25 0 0 1 6.75 5.25Z" />
+                            </svg>
+                        </div>
+                        <div
+                            class="size-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                            <svg aria-hidden="true" class="icon icon-sm" viewBox="0 0 24 24">
+                                <rect x="3.75" y="6" width="16.5" height="12" rx="2" />
+                                <circle cx="9" cy="11" r="1.5" />
+                                <path d="m20.25 15-4.5-4.5L9 17.25" />
+                            </svg>
+                        </div>
+                        <div
+                            class="size-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                            <svg aria-hidden="true" class="icon icon-sm" viewBox="0 0 24 24">
+                                <path d="M8.625 9.75h6.75" />
+                                <path d="M8.625 13.5h4.5" />
+                                <path
+                                    d="M7.5 20.25h9a3.75 3.75 0 0 0 3.75-3.75v-9A3.75 3.75 0 0 0 16.5 3.75h-9A3.75 3.75 0 0 0 3.75 7.5v9A3.75 3.75 0 0 0 7.5 20.25Z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
