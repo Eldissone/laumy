@@ -80,19 +80,26 @@
     <header class="fixed top-0 left-0 right-0 z-50 glass-header border-b border-primary/10">
         <div class="flex items-center justify-between px-6 h-16 max-w-lg mx-auto">
 
-            <h1 class="text-2xl font-black tracking-widest text-primary">LauMY</h1>
+            <h1 class="text-2xl font-black tracking-widest text-primary">
+                <a href="index.html" class="hover:opacity-90 transition-opacity">LauMY</a>
+            </h1>
 
             <div class="flex items-center gap-3">
-                <svg aria-hidden="true" class="icon text-primary/90" viewBox="0 0 24 24">
-                    <path d="m21 21-4.35-4.35" />
-                    <circle cx="11" cy="11" r="6" />
-                </svg>
+                <button type="button" data-search-open aria-label="Abrir pesquisa"
+                    class="text-primary/90 hover:text-primary transition-colors">
+                    <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+                        <path d="m21 21-4.35-4.35" />
+                        <circle cx="11" cy="11" r="6" />
+                    </svg>
+                </button>
                 <div class="relative">
                 </div>
             </div>
         </div>
         <!-- Info Banner (Horizontal Scroll) -->
-        <div class="flex max-w-full gap-4 px-4 py-2 overflow-x-auto hide-scrollbar bg-secondary/10 border-t border-secondary/20">
+        <div id="info-banner"
+            class="flex max-w-full gap-4 px-4 py-2 overflow-x-auto hide-scrollbar bg-secondary/10 border-t border-secondary/20"
+            aria-label="Informações rápidas">
             <div class="flex h-6 shrink-0 items-center justify-center gap-x-2">
                 <svg aria-hidden="true" class="icon icon-sm text-secondary" viewBox="0 0 24 24">
                     <path d="M12 7.5v4.5l2.75 2.75" />
@@ -118,6 +125,21 @@
             </div>
         </div>
     </header>
+    <div id="site-search-overlay" class="fixed inset-0 z-[70] bg-black/45 hidden p-4">
+        <div class="max-w-lg mx-auto mt-14 bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden">
+            <div class="flex items-center gap-2 px-3 py-3 border-b border-slate-200">
+                <svg aria-hidden="true" class="icon text-secondary" viewBox="0 0 24 24">
+                    <path d="m21 21-4.35-4.35" />
+                    <circle cx="11" cy="11" r="6" />
+                </svg>
+                <input id="site-search-input" type="search" placeholder="Pesquisar produtos, categorias, paginas..."
+                    class="w-full bg-transparent text-sm outline-none placeholder:text-slate-400" />
+                <button type="button" data-search-close aria-label="Fechar pesquisa"
+                    class="text-slate-500 hover:text-slate-700 text-xs font-bold uppercase tracking-wide">Fechar</button>
+            </div>
+            <div id="site-search-results" class="max-h-80 overflow-y-auto p-2"></div>
+        </div>
+    </div>
 
     <main class=" pb-24 max-w-lg mx-auto">
         <!-- Hero Section -->
@@ -156,11 +178,11 @@
             </div>
         </section>
         <!-- Categories Section -->
-        <section class="p-4 py-10">
+        <section id="categorias" class="p-4 py-10">
             <div class="flex items-end justify-between mb-6">
                 <h3 class="text-2xl font-bold tracking-tight">Categorias</h3>
                 <a class="text-secondary text-xs font-bold uppercase tracking-wider border-b border-secondary"
-                    href="#">Explorar tudo</a>
+                    href="colecao.html#categorias">Explorar tudo</a>
             </div>
             <div class="grid grid-cols-2 gap-3">
                 <div class="group relative aspect-square overflow-hidden rounded-xl">
@@ -169,7 +191,7 @@
                         style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url("assets/images/landing/cat-watches.png");'>
                     </div>
                     <div class="absolute inset-0 flex items-end p-4">
-                        <p class="text-lg font-bold">Relógios</p>
+                        <p class="text-lg text-white font-bold">Relógios</p>
                     </div>
                 </div>
                 <div class="group relative aspect-square overflow-hidden rounded-xl">
@@ -178,7 +200,7 @@
                         style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url("assets/images/landing/cat-gold.png");'>
                     </div>
                     <div class="absolute inset-0 flex items-end p-4">
-                        <p class="text-lg font-bold">Ouro</p>
+                        <p class="text-lg text-white font-bold">Ouro</p>
                     </div>
                 </div>
                 <div class="group relative aspect-square overflow-hidden rounded-xl">
@@ -187,7 +209,7 @@
                         style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url("assets/images/landing/cat-silver.png");'>
                     </div>
                     <div class="absolute inset-0 flex items-end p-4">
-                        <p class="text-lg font-bold">Prata</p>
+                        <p class="text-lg text-white font-bold">Prata</p>
                     </div>
                 </div>
                 <div class="group relative aspect-square overflow-hidden rounded-xl">
@@ -196,7 +218,7 @@
                         style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url("assets/images/landing/cat-jewelry.png");'>
                     </div>
                     <div class="absolute inset-0 flex items-end p-4">
-                        <p class="text-lg font-bold">Joias</p>
+                        <p class="text-lg text-white font-bold">Joias</p>
                     </div>
                 </div>
             </div>
@@ -397,7 +419,7 @@
                 <li><a class="text-slate-600 hover:text-primary transition-colors" href="#">Trocas</a></li>
                 <li><a class="text-slate-600 hover:text-primary transition-colors" href="#">Lojas</a></li>
             </ul>
-            <p class="text-[10px] text-slate-600 uppercase tracking-widest">Â©2026 relojoaria LauMY. Todos os direitos
+           <p class="text-[10px] text-slate-600 uppercase tracking-widest">Relojoaria LauMY © 2026 . Todos os direitos
                 reservados.</p>
         </footer>
 
@@ -438,6 +460,190 @@
             ["touchstart", "click", "scroll"].forEach((eventName) => {
                 window.addEventListener(eventName, resumeAll, { passive: true, once: true });
             });
+        })();
+    </script>
+    <script>
+        (() => {
+            const banner = document.getElementById("info-banner");
+            if (!banner || banner.dataset.initialized === "true") return;
+
+            banner.dataset.initialized = "true";
+
+            const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const items = Array.from(banner.children);
+            if (items.length === 0) return;
+
+            // Duplicate items to create a seamless infinite horizontal loop.
+            items.forEach((item) => {
+                const clone = item.cloneNode(true);
+                clone.setAttribute("aria-hidden", "true");
+                banner.appendChild(clone);
+            });
+
+            let rafId = null;
+            const speedPx = 0.55;
+
+            const normalizeScroll = () => {
+                const halfWidth = banner.scrollWidth / 2;
+                if (banner.scrollLeft >= halfWidth) {
+                    banner.scrollLeft -= halfWidth;
+                }
+            };
+
+            const tick = () => {
+                banner.scrollLeft += speedPx;
+                normalizeScroll();
+                rafId = window.requestAnimationFrame(tick);
+            };
+
+            const start = () => {
+                if (prefersReducedMotion || rafId !== null) return;
+                rafId = window.requestAnimationFrame(tick);
+            };
+
+            const stop = () => {
+                if (rafId === null) return;
+                window.cancelAnimationFrame(rafId);
+                rafId = null;
+            };
+
+            banner.addEventListener("mouseenter", stop);
+            banner.addEventListener("mouseleave", start);
+            banner.addEventListener("touchstart", stop, { passive: true });
+            banner.addEventListener("touchend", start, { passive: true });
+            banner.addEventListener("pointerdown", stop);
+            window.addEventListener("pointerup", start);
+            banner.addEventListener("focusin", stop);
+            banner.addEventListener("focusout", start);
+
+            document.addEventListener("visibilitychange", () => {
+                if (document.hidden) stop();
+                else start();
+            });
+
+            window.addEventListener("resize", normalizeScroll);
+            start();
+        })();
+    </script>
+    <script>
+        (() => {
+            const overlay = document.getElementById("site-search-overlay");
+            const input = document.getElementById("site-search-input");
+            const results = document.getElementById("site-search-results");
+            const openers = Array.from(document.querySelectorAll("[data-search-open]"));
+            const closers = Array.from(document.querySelectorAll("[data-search-close]"));
+
+            if (!overlay || !input || !results || openers.length === 0) return;
+
+            const entries = [
+                { title: "Pagina inicial", subtitle: "Hero e principais destaques", href: "index.html" },
+                { title: "Categorias", subtitle: "Ver todas as categorias", href: "index.html#categorias" },
+                { title: "Colecao", subtitle: "Pagina completa da colecao", href: "colecao.html" },
+                { title: "Destaques", subtitle: "Produtos em destaque", href: "colecao.html#destaques" },
+                { title: "WhatsApp", subtitle: "+244 933 170 799", href: "https://wa.me/244933170799?text=Ol%C3%A1%20Eldissone%20Vilonga", external: true },
+                { title: "Instagram", subtitle: "Eldissone Vilonga", href: "https://www.instagram.com/eldissone.vilonga/", external: true },
+                { title: "Facebook", subtitle: "Eldissone Vilonga", href: "https://www.facebook.com/eldissone.vilonga", external: true }
+            ];
+
+            const normalize = (value) =>
+                value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+
+            const isOpen = () => !overlay.classList.contains("hidden");
+
+            const render = (queryText) => {
+                const query = normalize(queryText);
+                const filtered = query
+                    ? entries.filter((item) => normalize(`${item.title} ${item.subtitle}`).includes(query))
+                    : entries;
+
+                results.innerHTML = "";
+
+                if (filtered.length === 0) {
+                    const empty = document.createElement("p");
+                    empty.className = "px-3 py-4 text-sm text-slate-500";
+                    empty.textContent = "Nenhum resultado encontrado.";
+                    results.appendChild(empty);
+                    return;
+                }
+
+                filtered.forEach((item) => {
+                    const link = document.createElement("a");
+                    link.href = item.href;
+                    link.className =
+                        "block rounded-lg px-3 py-3 hover:bg-slate-100 transition-colors border border-transparent hover:border-slate-200";
+                    if (item.external) {
+                        link.target = "_blank";
+                        link.rel = "noopener noreferrer";
+                    }
+
+                    const title = document.createElement("p");
+                    title.className = "text-sm font-semibold text-slate-900";
+                    title.textContent = item.title;
+
+                    const subtitle = document.createElement("p");
+                    subtitle.className = "text-xs text-slate-500 mt-0.5";
+                    subtitle.textContent = item.subtitle;
+
+                    link.appendChild(title);
+                    link.appendChild(subtitle);
+                    results.appendChild(link);
+                });
+            };
+
+            const openSearch = () => {
+                overlay.classList.remove("hidden");
+                document.body.classList.add("overflow-hidden");
+                render(input.value);
+                window.setTimeout(() => input.focus(), 0);
+            };
+
+            const closeSearch = () => {
+                overlay.classList.add("hidden");
+                document.body.classList.remove("overflow-hidden");
+            };
+
+            openers.forEach((button) => button.addEventListener("click", openSearch));
+            closers.forEach((button) => button.addEventListener("click", closeSearch));
+
+            overlay.addEventListener("click", (event) => {
+                if (event.target === overlay) closeSearch();
+            });
+
+            input.addEventListener("input", () => render(input.value));
+
+            input.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    closeSearch();
+                    return;
+                }
+
+                if (event.key === "Enter") {
+                    const firstResult = results.querySelector("a");
+                    if (firstResult) firstResult.click();
+                }
+            });
+
+            document.addEventListener("keydown", (event) => {
+                const activeTag = (document.activeElement?.tagName || "").toLowerCase();
+                const typing = activeTag === "input" || activeTag === "textarea";
+
+                if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+                    event.preventDefault();
+                    if (isOpen()) closeSearch();
+                    else openSearch();
+                    return;
+                }
+
+                if (event.key === "/" && !typing) {
+                    event.preventDefault();
+                    openSearch();
+                    return;
+                }
+
+                if (event.key === "Escape" && isOpen()) closeSearch();
+            });
+
+            render("");
         })();
     </script>
 </body>
